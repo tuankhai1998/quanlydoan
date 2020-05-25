@@ -1,0 +1,228 @@
+@import "./common/defaultStyle.scss";
+
+$primary-bg: linear-gradient(to left, #a6ffcb, #12d8fa, #1fa2ff);
+
+/*----------------------------------------*/
+/* Login page
+/*----------------------------------------*/
+
+.login {
+    width: 100%;
+    height: 80%;
+
+    position: relative;
+    background: $primary-bg;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background-image: url("./../images/bg.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+        // background-size: cover;
+    }
+
+    .logo {
+        width: 30%;
+
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__form {
+        height: 60%;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translateY(-50%);
+
+        background-color: #ffffff;
+        padding: 30px 20px;
+        border-radius: 10px;
+
+        &--title {
+            text-transform: uppercase;
+            color: $primary-color;
+        }
+
+        &--input {
+            position: relative;
+            // margin: 10px;
+            padding-top: 15px;
+
+            &::before {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $primary-color;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+            label {
+                position: absolute;
+                margin: 0 5px;
+
+                // top: 0;
+                left: 0;
+                bottom: 0;
+                transition: all 0.2s;
+
+                color: $para-color;
+                opacity: 0;
+            }
+
+            input {
+                width: 100%;
+
+                outline: none;
+                border: none;
+
+                &:not(:placeholder-shown) + label,
+                &:focus + label {
+                    font-size: 13px;
+                    top: 0;
+                    color: $primary-color;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/*----------------------------------------*/
+/* main page
+/*----------------------------------------*/
+
+/* --------header-------------------------*/
+
+.header {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+
+    &__title {
+        text-transform: uppercase;
+        color: $primary-color;
+        font-weight: bold;
+        text-align: center;
+
+        span {
+            font-size: 35px;
+        }
+    }
+
+    &__logo {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__profile {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
+        &--name,
+        &--id {
+            display: flex;
+
+            strong {
+                margin-right: 2rem;
+            }
+            p {
+                color: $primary-color;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        background: $primary-bg; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(100% 0, 100% 100%, 0 66%, 0 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(31, 162, 255, 0.4);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        clip-path: polygon(100% 0, 100% 100%, 0 76%, 0 0);
+    }
+}
+
+.main {
+    height: 100vh;
+}
+
+/*--------------footer-------------------*/
+.footer {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 20%;
+        left: 0;
+
+        border-radius: 50% 50% 0 0;
+        background: $primary-bg;
+        transform: scale(1.2);
+        z-index: -1;
+    }
+
+    h2 {
+        color: $primary-color;
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+}
