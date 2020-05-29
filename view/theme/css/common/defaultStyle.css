@@ -5,6 +5,8 @@ html,
 body {
   height: 100%;
   font-family: "Roboto", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
 

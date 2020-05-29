@@ -5,6 +5,8 @@ html,
 body {
   height: 100%;
   font-family: "Roboto", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -231,38 +233,44 @@ ol {
 /* Login page
 /*----------------------------------------*/
 .login {
-  width: 100%;
-  height: 80%;
-  position: relative;
+  width: 50%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background: -webkit-gradient(linear, right top, left top, from(#a6ffcb), color-stop(#12d8fa), to(#1fa2ff));
   background: linear-gradient(to left, #a6ffcb, #12d8fa, #1fa2ff);
   overflow: hidden;
-}
-
-.login::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-image: url("./../images/bg.svg");
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 .login .logo {
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .logo img {
+  width: 70%;
 }
 
 .login__form {
-  height: 60%;
-  width: 30%;
+  height: 100%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,17 +279,8 @@ ol {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   background-color: #ffffff;
   padding: 30px 20px;
-  border-radius: 10px;
 }
 
 .login__form--title {
@@ -291,13 +290,14 @@ ol {
 
 .login__form--input {
   position: relative;
+  margin: 10px 0;
   padding-top: 15px;
 }
 
 .login__form--input::before {
   content: "";
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #f34e3a;
   position: absolute;
   bottom: 0;
@@ -327,6 +327,13 @@ ol {
   top: 0;
   color: #f34e3a;
   opacity: 1;
+}
+
+.login__form .login--btn {
+  margin: 20px 0;
+  width: 30%;
+  text-align: center;
+  padding: 10px 0;
 }
 
 /*----------------------------------------*/
