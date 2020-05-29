@@ -85,6 +85,7 @@ $max-zindex: 1000;
 
                 outline: none;
                 border: none;
+                font-size: 1.6rem;
 
                 &:not(:placeholder-shown) + label,
                 &:focus + label {
@@ -166,6 +167,11 @@ $max-zindex: 1000;
         .nav-item {
             width: 100%;
             padding: 1rem 0;
+            transition: background 0.2s;
+
+            &:hover {
+                background-color: $primary-menu-bg !important;
+            }
 
             &.active {
                 position: relative;
@@ -231,12 +237,82 @@ $max-zindex: 1000;
 
     .title {
         margin-bottom: 3rem;
+        text-align: center;
     }
 
     .user-profile {
         &__image {
             width: 50%;
             margin: 0 auto;
+        }
+    }
+
+    .select-teacher {
+        .select-option {
+            .select-group {
+                margin-bottom: 2rem;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    .list-teacher {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin: 2rem 0;
+
+            background: rgb(0, 0, 0);
+            background: linear-gradient(103deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
+            line-height: 2;
+            color: #ffffff;
+
+            p {
+                margin-bottom: 0;
+                color: $white-color;
+            }
+            .more {
+                font-size: 1.6rem;
+                color: $item-menu-bg-2;
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .item {
+                display: flex;
+                flex-direction: row;
+                flex-basis: 500px;
+                margin: 1rem;
+
+                border: 1px solid #000000;
+                border-radius: 1rem;
+
+                &__img {
+                    flex: 1;
+                    padding: 2rem;
+                }
+
+                &__content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    flex: 2;
+                    padding: 2rem;
+                }
+            }
         }
     }
 }

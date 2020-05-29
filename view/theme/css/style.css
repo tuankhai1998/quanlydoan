@@ -48,7 +48,7 @@ h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   color: #8f8fa8;
   font-weight: 400;
@@ -320,6 +320,7 @@ ol {
   width: 100%;
   outline: none;
   border: none;
+  font-size: 1.6rem;
 }
 
 .login__form--input input:not(:placeholder-shown) + label,
@@ -406,6 +407,12 @@ ol {
 .nav-menu .navbar-nav .nav-item {
   width: 100%;
   padding: 1rem 0;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.nav-menu .navbar-nav .nav-item:hover {
+  background-color: #2c2d3a !important;
 }
 
 .nav-menu .navbar-nav .nav-item.active {
@@ -484,10 +491,103 @@ ol {
 
 .main .title {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .main .user-profile__image {
   width: 50%;
   margin: 0 auto;
+}
+
+.main .select-teacher .select-option .select-group {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .list-teacher__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: black;
+  background: linear-gradient(103deg, black 0%, white 100%);
+  line-height: 2;
+  color: #ffffff;
+}
+
+.main .list-teacher__header p {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.main .list-teacher__header .more {
+  font-size: 1.6rem;
+  color: #323543;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.main .list-teacher__header .more:hover {
+  color: #f34e3a;
+}
+
+.main .list-teacher__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.main .list-teacher__list .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-preferred-size: 500px;
+      flex-basis: 500px;
+  margin: 1rem;
+  border: 1px solid #000000;
+  border-radius: 1rem;
+}
+
+.main .list-teacher__list .item__img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 2rem;
+}
+
+.main .list-teacher__list .item__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
