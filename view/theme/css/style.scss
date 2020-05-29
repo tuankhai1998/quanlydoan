@@ -1,6 +1,10 @@
 @import "./common/defaultStyle.scss";
 
 $primary-bg: linear-gradient(to left, #a6ffcb, #12d8fa, #1fa2ff);
+$primary-menu-bg: #2c2d3a;
+$item-menu-bg-1: #3e4154;
+$item-menu-bg-2: #323543;
+$max-zindex: 1000;
 
 /*----------------------------------------*/
 /* Login page
@@ -105,119 +109,134 @@ $primary-bg: linear-gradient(to left, #a6ffcb, #12d8fa, #1fa2ff);
 /* main page
 /*----------------------------------------*/
 
-/* --------header-------------------------*/
+/* --------navbar-------------------------*/
+.nav-menu {
+    position: fixed;
+    background-color: $primary-menu-bg;
+    transition: width 600ms ease;
+    padding: 1rem;
+    font-size: 1.6rem;
+    width: 10rem;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: $max-zindex;
 
-.header {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    position: relative;
-
-    &__title {
-        text-transform: uppercase;
-        color: $primary-color;
-        font-weight: bold;
-        text-align: center;
-
-        span {
-            font-size: 35px;
+    &:hover {
+        width: 30rem;
+        transition: width 600ms ease;
+        .navbar-nav {
+            .nav-item {
+                .nav-link {
+                    .link-text {
+                        overflow: hidden;
+                        transition-delay: 1s;
+                        display: inline-block;
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
-
-    &__logo {
-        width: 15%;
+    .nav-header {
+        width: 100%;
+        height: 7rem;
+        padding: 1rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    &__profile {
-        display: flex;
-        flex-direction: column;
-        margin: 1rem 0;
+        justify-content: center;
 
-        &--name,
-        &--id {
+        background-image: url("../images/md-header-bg.jpg");
+
+        .logo {
+            width: 100%;
             display: flex;
-
-            strong {
-                margin-right: 2rem;
-            }
-            p {
-                color: $primary-color;
+            justify-content: start;
+            // margin-bottom: 2rem;
+            margin: auto 0;
+            img {
+                width: 5rem;
+                margin: 0 1.5rem;
             }
         }
     }
 
-    &::before {
-        content: "";
-        background: $primary-bg; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    .navbar-nav {
         width: 100%;
-        height: 100%;
-        clip-path: polygon(100% 0, 100% 100%, 0 66%, 0 0);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
-    }
+        .nav-item {
+            width: 100%;
+            padding: 1rem 0;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(31, 162, 255, 0.4);
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        clip-path: polygon(100% 0, 100% 100%, 0 76%, 0 0);
+            &.active {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+                    height: 50%;
+                    width: 1.5rem;
+                    background-color: white;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &:nth-child(odd) {
+                background-color: $item-menu-bg-1;
+            }
+            &:nth-child(even) {
+                background-color: $item-menu-bg-2;
+            }
+
+            &:nth-child(1) {
+                margin-top: 1rem;
+            }
+
+            .nav-link {
+                width: 100%;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                padding: 0;
+
+                .icon {
+                    width: 5rem;
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 1.5rem;
+                    i {
+                        font-size: 3rem;
+                        color: white;
+                        margin: 0 auto;
+                    }
+                }
+
+                .link-text {
+                    text-transform: uppercase;
+                    margin-left: 1.5rem;
+                    display: none;
+                    opacity: 0;
+                    color: white;
+                }
+            }
+        }
     }
 }
-
+/*-------------------- main----------------*/
 .main {
     height: 100vh;
-}
+    margin-left: 10rem;
+    padding: 5rem;
 
-/*--------------footer-------------------*/
-.footer {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-
-        position: absolute;
-        top: 20%;
-        left: 0;
-
-        border-radius: 50% 50% 0 0;
-        background: $primary-bg;
-        transform: scale(1.2);
-        z-index: -1;
+    .title {
+        margin-bottom: 3rem;
     }
 
-    h2 {
-        color: $primary-color;
-        display: inline-block;
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: 1rem;
-    }
-
-    .hidden {
-        display: none;
+    .user-profile {
+        &__image {
+            width: 50%;
+            margin: 0 auto;
+        }
     }
 }
