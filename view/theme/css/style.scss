@@ -315,4 +315,75 @@ $max-zindex: 1000;
             }
         }
     }
+
+    .form-do-an {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $white-color;
+        z-index: $max-zindex;
+        padding: 5rem;
+
+        transition: opacity 0.2s;
+
+        &.hidden {
+            opacity: 0;
+            z-index: -1;
+        }
+
+        &__content {
+            .input--form {
+                max-width: 60rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+                font-size: 1.6rem;
+
+                label {
+                    margin-bottom: 0;
+                }
+
+                input {
+                    min-width: 40rem;
+                    border: none;
+                    padding: 0.5rem;
+
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 2px;
+                        background-color: $primary-color;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+
+            .form__btn {
+                display: flex;
+
+                .primary-btn {
+                    padding: 1rem 0;
+                    width: 20%;
+                    margin: 1rem;
+
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .internship-information {
+        &--table {
+            width: 100%;
+
+            font-size: 1.6rem;
+        }
+    }
 }
