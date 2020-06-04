@@ -13,46 +13,96 @@
 </head>
 
 <body>
-    <nav class="nav-menu">
+    <nav class="nav-menu d-md-block d-none">
         <div class="nav-header">
             <a href="#" class="logo">
                 <img src="./theme/images/logo-small.png" alt="logo">
             </a>
         </div>
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item " index="1">
                 <a href="./mainpage.html" class="nav-link">
                     <div class="icon">
                         <i class="far fa-user"></i>
                     </div>
-                    <span class="link-text">Thông tin tài khoản</span>
+                    <span class="link-text">Quản lý sinh viên</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" index="2">
                 <a href="./chongv.html" class="nav-link">
                     <div class="icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <span class="link-text">Giảng viên hướng dẫn</span>
+                    <span class="link-text">Quản lý giảng viên</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
+
+            <li class="nav-item" index="3">
+                <a href="./trangthongtinthuctap.html" class="nav-link">
                     <div class="icon">
                         <i class="far fa-calendar-alt"></i>
                     </div>
-                    <span class="link-text">Thông tin thực tập </span>
+                    <span class="link-text">Quản lý đồ án</span>
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" index="4">
                 <a href="#" class="nav-link">
                     <div class="icon">
                         <i class="fas fa-cog"></i>
                     </div>
-                    <span class="link-text">setting</span>
+                    <span class="link-text">Thêm user</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="nav-menu nav-menu--mobile d-block d-md-none">
+        <div class="nav-header">
+            <a href="#" class="logo">
+                <img src="./theme/images/logo-small.png" alt="logo">
+            </a>
+            <button class="showMenu" onclick="toggleMenuForMobile()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item " index="1">
+                <a href="./mainpage.html" class="nav-link">
+                    <div class="icon">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <span class="link-text">Quản lý sinh viên</span>
+                </a>
+            </li>
+
+            <li class="nav-item" index="2">
+                <a href="./chongv.html" class="nav-link">
+                    <div class="icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <span class="link-text">Quản lý giảng viên</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item" index="3">
+                <a href="./trangthongtinthuctap.html" class="nav-link">
+                    <div class="icon">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <span class="link-text">Quản lý đồ án</span>
+                </a>
+            </li>
+
+            <li class="nav-item" index="4">
+                <a href="#" class="nav-link">
+                    <div class="icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="link-text">Thêm user </span>
                 </a>
             </li>
         </ul>
@@ -65,32 +115,65 @@
                 Thông tin thực tập
             </h2>
             <div class="container-fluid">
-                <table class="internship-information--table">
-                    <thead>
-                        <tr>
-                            <th>Mã sinh viên</th>
-                            <th>Họ và tên</th>
-                            <th>Lớp</th>
-                            <th>Khoa</th>
-                            <th>Công ty thực tập</th>
-                            <th>Thời gian bắt đầu </th>
-                            <th>Thời gian kết thúc</th>
-                            <th>Đánh giá</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1234</td>
-                            <td>Nguyễ n Thị M</td>
-                            <td>57Th1</td>
-                            <td>Công nghệ thông tin</td>
-                            <td>Công ty 1</td>
-                            <td>06/07/2017</td>
-                            <td>06/08/2020</td>
-                            <td>Đạt</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="internship-information__table">
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Họ và tên
+                        </div>
+                        <div class="col--content">
+                            Nguyễn Thị M
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Lớp
+                        </div>
+                        <div class="col--content">
+                            57Th1
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Khoa
+                        </div>
+                        <div class="col--content">
+                            Công Nghệ thông tin
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Công ty thực tập
+                        </div>
+                        <div class="col--content">
+                            Công ty n
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Thời Gian bắt đầu
+                        </div>
+                        <div class="col--content">
+                            6/7/2019
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Thời gian kết thức
+                        </div>
+                        <div class="col--content">
+                            6/8/2019
+                        </div>
+                    </div>
+                    <div class="internship-information__table--col">
+                        <div class="col--head">
+                            Đánh giá
+                        </div>
+                        <div class="col--content">
+                            Đạt
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
