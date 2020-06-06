@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/00da938b88.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <title>Quản lý sinh viên</title>
+    <title>Quản lý giản viên</title>
 </head>
 
 <body>
@@ -128,7 +128,7 @@
     <main class="main">
 
         <div class="management">
-            <h1 class="title">Quản lý sinh viên</h1>
+            <h1 class="title">Quản lý giảng viên</h1>
             <div class="container-fluid">
                 <div class="select-option">
                     <form action="">
@@ -146,7 +146,7 @@
                             <div class="col-md-4 col-12">
                                 <div class="select-group">
                                     <select class="selectpicker">
-                                        <option value="" selected>Chọn Lớp</option>
+                                        <option value="" selected>Bộ môn</option>
                                         <option value="CNTT">Công nghệ thông tin</option>
                                         <option value="CT">Công trình</option>
                                         <option value="ND">Nào đó</option>
@@ -155,7 +155,7 @@
                             </div>
                             <div class="col-md-4 col-12">
                                 <div class="input-group">
-                                    <input type="text" placeholder="Tên sinh viên" id="tkInput">
+                                    <input type="text" placeholder="Tên giảng viên" id="tkInput">
                                     <button class="primary-btn">Tìm</button>
 
                                 </div>
@@ -164,75 +164,14 @@
                     </form>
 
                 </div>
-                <!-- <div class="list-student__table">
-                    <div class="list-student__table--col">
-                        <div class="col--head">
-                            Mã sinh viên
-                        </div>
-                        <div class="col--content">
-                            123
-                        </div>
-                        <div class="col--content">
-                            234
-                        </div>
-                    </div>
-                    <div class="list-student__table--col">
-
-                        <div class="col--head">
-                            Họ và tên
-                        </div>
-                        <div class="col--content">
-                            Nguyễn Thị M
-                        </div>
-                        <div class="col--content">
-                            Trần Văn T
-                        </div>
-                    </div>
-                    <div class="list-student__table--col">
-                        <div class="col--head">
-                            Lớp
-                        </div>
-                        <div class="col--content">
-                            57Th1
-                        </div>
-                        <div class="col--content">
-                            57Th2
-                        </div>
-                    </div>
-                    <div class="list-student__table--col">
-                        <div class="col--head">
-                            Khoa
-                        </div>
-                        <div class="col--content">
-                            Công Nghệ thông tin
-                        </div>
-                        <div class="col--content">
-                            Công Nghệ thông tin
-                        </div>
-                    </div>
-
-
-                    <div class="list-student__table--col">
-                        <div class="col--head">
-                            Chọn
-                        </div>
-                        <div class="col--content">
-                            <a href="./sinhvienmore.html" onclick="studentBtnClick(123, 123)" class="primary-btn">Xem
-                                thêm</a>
-                        </div>
-                        <div class="col--content">
-                            <button onclick="studentBtnClick(123, 123)" class="primary-btn">Xem thêm</button>
-                        </div>
-                    </div>
-
-                </div> -->
 
                 <table class="table table-hover table-sm table-dark">
                     <thead>
                         <tr>
-                            <th scope="col">Mã sinh viên</th>
+                            <th scope="col">Mã giảng viên</th>
                             <th scope="col">Họ và tên</th>
-                            <th scope="col">Lớp</th>
+                            <th scope="col">Khoa</th>
+                            <th scope="col">Bộ môn</th>
                             <th scope="col">Ngày tháng năm sinh</th>
                         </tr>
                     </thead>
@@ -241,24 +180,25 @@
                             <th scope="row">1234</th>
                             <td>Nguyễn Thị A</td>
                             <td>57Th1</td>
+                            <td>57Th1</td>
                             <td>6/6/1997</td>
                         </tr>
                         <tr>
                             <th scope="row">5679</th>
                             <td>Trần Văn T</td>
                             <td>56CT</td>
+                            <td>56CT</td>
                             <td>7/7/1996</td>
                         </tr>
                         <tr>
                             <th scope="row">12344</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+
                         </tr>
                     </tbody>
                 </table>
                 <div class="object-details hidden ">
                     <div class=" container">
-                        <h2 class="title">Thông tin sinh viên</h2>
+                        <h2 class="title">Thông tin giảng viên</h2>
                         <div class="row">
                             <div class="col-md-4 col-12">
                                 <div class="user-profile__image">
@@ -270,7 +210,7 @@
                                 <form class="form__content" name="form__information">
                                     <div class="from__content--input">
                                         <div class="name input--form">
-                                            <label> Tên sinh viên: </label>
+                                            <label> Tên giảng viên: </label>
                                             <input name="Name" type="text" value="Nguyễn Thị C" readonly>
                                         </div>
                                         <div class="class input--form">
@@ -282,11 +222,11 @@
                                             <input name="Khoa" type="text" value="Công Nghệ Thông Tin" readonly>
                                         </div>
                                         <div class="name input--form">
-                                            <label> Mã sinh viên: </label>
+                                            <label> Mã giảng viên: </label>
                                             <input type="text" value="123456" readonly>
                                         </div>
                                         <div class="name input--form">
-                                            <label> Email </label>
+                                            <label> Email: </label>
                                             <input type="text" value="abc@gmail.com"" readonly>
                                         </div>
                                     </div>

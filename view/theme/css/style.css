@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
@@ -21,7 +22,7 @@ h6 {
   margin: 0;
   color: #111111;
   font-weight: 400;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -146,7 +147,7 @@ ol {
 .primary-btn {
   display: inline-block;
   font-size: 14px;
-  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 12px 39px;
   color: #ffffff;
   background: #1d1d1d;
@@ -233,12 +234,37 @@ ol {
 
 /* Mixin */
 /* Set các giá trị với màn hình tương ứng */
+.secondary-btn {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  border: none;
+  background: none;
+  color: #333333;
+  margin: 1rem 0;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.secondary-btn:hover {
+  color: #36adf7;
+}
+
+.mt-1 {
+  margin: 1rem 0;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -1;
+  display: none !important;
+}
+
 /*----------------------------------------*/
 /* Login page
 /*----------------------------------------*/
 .login {
   width: 50%;
-  height: 50%;
+  height: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,6 +278,13 @@ ol {
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 479px) {
+  .login {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .login .logo {
@@ -338,7 +371,8 @@ ol {
   opacity: 1;
 }
 
-.login__form .login--btn {
+.login__form .login--btn,
+.login__form .change-btn {
   margin: 20px 0;
   width: 30%;
   min-width: 10rem;
@@ -623,6 +657,12 @@ ol {
 .main .title {
   margin-bottom: 3rem;
   text-align: center;
+}
+
+@media (max-width: 479px) {
+  .main .title {
+    padding-top: 10rem;
+  }
 }
 
 .main .user-profile__image {
@@ -971,5 +1011,107 @@ ol {
 
 .main .management .select-option .select-group .dropdown-menu {
   font-size: 1.6rem;
+}
+
+.main .management__addUser {
+  font-size: 1.6rem;
+}
+
+.main .management__addUser .radio-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .management__addUser .type-addbox__btn-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .management__addUser .type-addbox__btn-group .primary-btn {
+  margin: 0 1rem;
+}
+
+.main .management__addUser .type-addbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #000000;
+  position: relative;
+}
+
+.main .management__addUser .type-addbox .radio-button,
+.main .management__addUser .type-addbox .form__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  max-width: 40rem;
+  margin: 2rem 0;
+}
+
+.main .management__addUser .type-addbox .user--one,
+.main .management__addUser .type-addbox .multiple--user {
+  width: 100%;
+  max-width: 40rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .management__addUser .type-addbox .user--one .input--form,
+.main .management__addUser .type-addbox .multiple--user .input--form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.main .management__addUser .type-addbox .user--one .input--form select,
+.main .management__addUser .type-addbox .user--one .input--form input,
+.main .management__addUser .type-addbox .multiple--user .input--form select,
+.main .management__addUser .type-addbox .multiple--user .input--form input {
+  width: 100%;
+  max-width: 18rem;
+}
+
+@media (min-width: 1024px) {
+  .main .management__addUser .type-addbox .user--one .input--form select,
+  .main .management__addUser .type-addbox .user--one .input--form input,
+  .main .management__addUser .type-addbox .multiple--user .input--form select,
+  .main .management__addUser .type-addbox .multiple--user .input--form input {
+    min-width: 25rem;
+  }
+}
+
+.main .management__addUser .type-addbox .user--one .input--form select .selected,
+.main .management__addUser .type-addbox .user--one .input--form input .selected,
+.main .management__addUser .type-addbox .multiple--user .input--form select .selected,
+.main .management__addUser .type-addbox .multiple--user .input--form input .selected {
+  color: #4e4e4e;
 }
 /*# sourceMappingURL=style.css.map */

@@ -29,14 +29,42 @@ $desktop-width: 1024px;
     }
 }
 
+.secondary-btn {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    background: none;
+    color: #333333;
+    margin: 1rem 0;
+    transition: color 0.2s;
+    &:hover {
+        color: #36adf7;
+    }
+}
+
+.mt-1 {
+    margin: 1rem 0;
+}
+
+.hidden {
+    opacity: 0;
+    z-index: -1;
+    display: none !important;
+}
+
 /*----------------------------------------*/
 /* Login page
 /*----------------------------------------*/
 
 .login {
     width: 50%;
-    height: 50%;
+    height: 60%;
     display: flex;
+
+    @include mobile() {
+        width: 100%;
+        height: 100%;
+    }
 
     position: absolute;
     top: 50%;
@@ -120,7 +148,8 @@ $desktop-width: 1024px;
             }
         }
 
-        .login--btn {
+        .login--btn,
+        .change-btn {
             margin: 20px 0;
             width: 30%;
             min-width: 10rem;
@@ -369,6 +398,10 @@ $desktop-width: 1024px;
     .title {
         margin-bottom: 3rem;
         text-align: center;
+
+        @include mobile() {
+            padding-top: 10rem;
+        }
     }
 
     .user-profile {
@@ -637,6 +670,72 @@ $desktop-width: 1024px;
 
                     &-menu {
                         font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+        &__addUser {
+            font-size: 1.6rem;
+            .radio-button {
+                display: flex;
+            }
+
+            .type-addbox__btn-group {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .primary-btn {
+                    margin: 0 1rem;
+                }
+            }
+
+            .type-addbox {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                border: 1px solid #000000;
+                // margin-top: 5rem;
+
+                position: relative;
+
+                .radio-button,
+                .form__btn {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+                    max-width: 40rem;
+
+                    margin: 2rem 0;
+                }
+
+                .user--one,
+                .multiple--user {
+                    width: 100%;
+                    max-width: 40rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    .input--form {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 0.5rem;
+
+                        select,
+                        input {
+                            width: 100%;
+                            max-width: 18rem;
+
+                            @include desktop() {
+                                min-width: 25rem;
+                            }
+
+                            .selected {
+                                color: #4e4e4e;
+                            }
+                        }
                     }
                 }
             }

@@ -8,9 +8,13 @@ const deleteBtn = document.getElementById("deleteBtn");
 const inputForm = document.querySelectorAll(".form__content .input--form input")
 const tableRow = document.querySelectorAll(".table tbody tr");
 const menuItem = document.querySelectorAll(".nav-menu .navbar-nav .nav-item")
-
+const addUserType = document.querySelectorAll(".management__addUser .type-addbox__btn-group");
+const userInsertForm = document.querySelector(".management__addUser .type-addbox");
 const objectDetail = document.querySelector(".object-details");
-
+const changePassBtn = document.querySelector(".change-pass");
+const changeBtn = document.querySelector(".change-btn");
+const loginBtn = document.querySelector(".login--btn");
+const changePassInput = document.querySelectorAll(".change-pass__input")
 
 
 let teacherArray;
@@ -131,33 +135,72 @@ const tableRowClick = () => {
 }
 
 
+const selectTypeInsert = () => {
+    addUserType.forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            // console.log(e.target.dataset.name)
+            if (e.target.dataset.type == 1) {
+                // btn.classList.add("active")
+                userInsertForm.querySelector(".user--one").classList.remove("hidden")
+                userInsertForm.querySelector(".multiple--user").classList.add("hidden")
+            } else {
+                userInsertForm.querySelector(".user--one").classList.add("hidden")
+                userInsertForm.querySelector(".multiple--user").classList.remove("hidden")
+            }
+
+        })
+    })
+}
+selectTypeInsert()
+
 selectTeacherBtnClick()
 tableRowClick()
 
 
-cancelBtn.addEventListener('click', (e) => {
-    if (formDoAn) {
-        formDoAn.classList.add('hidden');
-    } else {
-        objectDetail.classList.add("hidden")
+const BtnClink = () => {
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', (e) => {
+            if (formDoAn) {
+                formDoAn.classList.add('hidden');
+            } else if (objectDetail) {
+                objectDetail.classList.add("hidden")
+            }
+            localStorage.setItem('teacher', [])
+        })
     }
-    localStorage.setItem('teacher', [])
-})
+    if (repairBtn) {
+        repairBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            inputForm.forEach(input => {
+                input.removeAttribute("readonly")
+                input.classList.add("border")
+            })
+
+        })
+    }
+    if (deleteBtn) {
+        deleteBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            console.log("delete")
+
+        })
+    }
+    if (changePassBtn) {
+        changePassBtn.addEventListener("click", e => {
+            e.preventDefault()
+            changePassInput.forEach(input => {
+                input.classList.toggle("hidden")
+            })
+            changeBtn.classList.toggle("hidden")
+            loginBtn.classList.toggle("hidden")
+        })
+    }
 
 
 
-repairBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    inputForm.forEach(input => {
-        input.removeAttribute("readonly")
-        input.classList.add("border")
-    })
 
-})
+}
+BtnClink()
 
 
-deleteBtn.addEventListener("click", (e) => {
-    e.preventDefault()
-    console.log("delete")
-
-})
