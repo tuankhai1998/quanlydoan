@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/00da938b88.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <title>Danh sach sinh viên đăng ký làm đồ án</title>
+    <title>Danh sach sinh viên đã hoàn thành</title>
 </head>
 
 <body>
@@ -67,6 +67,7 @@
 
                 </ul>
             </li>
+
 
             <li class="nav-item" index="5">
                 <a href="#" class="nav-link">
@@ -154,7 +155,6 @@
 
                 </ul>
             </li>
-
             <li class="nav-item" index="5">
                 <a href="#" class="nav-link">
                     <div class="icon">
@@ -188,7 +188,7 @@
     <main class="main">
         <div class="list-student">
             <h1 class="title">
-                Danh sach sinh viên đăng ký làm đồ án
+                Danh sách sinh viên đã hoàn thành
             </h1>
             <div class="container-fluid">
                 <div class="select-option">
@@ -297,13 +297,15 @@
                                     </div>
                                     <div class="ten-do-an input--form">
                                         <label> Tên Dồ ấn: </label>
-                                        <input type="text" placeholder="Nhập tên đò án">
+                                        <input type="text" value="Nhập tên đò án" readonly>
+                                    </div>
+                                    <div class="diem input--form">
+                                        <label> Điểm đồ án : </label>
+                                        <input type="text" placeholder="Nhập điểm đò án">
                                     </div>
 
                                     <div class="form__btn">
-                                        <button class="form__btn--submi primary-btn"
-                                            onclick="acceptStudent(12334)">Chọn</button>
-                                        <button class="primary-btn"> Hủy</button>
+                                        <button class="primary-btn ">Cập nhât điểm</button>
                                         <button class="primary-btn cancel-btn"> Quay lại</button>
                                     </div>
                                 </form>
@@ -340,6 +342,7 @@
             <button class="primary-btn">Thay đổi</button>
         </form>
     </div>
+
     <!-- footer -->
 
     <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js">

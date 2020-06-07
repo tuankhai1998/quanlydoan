@@ -138,69 +138,121 @@
                         <h2 class="title">Nhập từng tài khoản</h2>
                         <div class="radio-button">
                             <div class="radio-button--option">
-                                <input type="radio" name="user" id="sv" value="sv">
+                                <input type="radio" name="user-type" id="sv" value="sv" checked>
                                 <label for="sv"> Sinh viên</label>
                             </div>
                             <div class="radio-button--option">
-                                <input type="radio" name="user" id="gv" value="gv">
+                                <input type="radio" name="user-type" id="gv" value="gv">
                                 <label for="gv">Giảng Viên</label>
                             </div>
 
                         </div>
                         <div class="user--one">
-                            <div class="ten input--form">
-                                <label> Tên : </label>
-                                <input name="Name" type="text" placeholder="Nhập Tên">
+                            <div class="gv-form hidden ">
+                                <div class="ten input--form">
+                                    <label> Tên : </label>
+                                    <input name="Name" type="text" placeholder="Nhập Tên">
+                                </div>
+                                <div class="ma input--form">
+                                    <label> Mã: </label>
+                                    <input name="Class" type="text" placeholder="Nhập ID">
+                                </div>
+                                <div class="khoa input--form">
+                                    <label> Khoa: </label>
+                                    <select>
+                                        <option class="selected" value="" selected> Chọn khoa</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                    </select>
+                                </div>
+                                <div class="bomon-lop input--form">
+                                    <label> Bộ môn: </label>
+                                    <select>
+                                        <option class="selected" value="" selected> Bộ môn</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                    </select>
+                                </div>
+                                <div class="email input--form">
+                                    <label> Email: </label>
+                                    <input type="text" placeholder="Nhập email">
+                                </div>
+                                <div class="image input--form">
+                                    <label> Ảnh: </label>
+                                    <input type="file"" placeholder=" Thêm ảnh ">
+                                </div>
+    
                             </div>
-                            <div class="ma input--form">
-                                <label> Mã: </label>
-                                <input name="Class" type="text" placeholder="Nhập ID">
-                            </div>
-                            <div class="khoa input--form">
-                                <label> Khoa: </label>
-                                <select>
-                                    <option class="selected" value="" selected> Chọn khoa</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                </select>
-                            </div>
-                            <div class="bomon-lop input--form">
-                                <label> Bộ môn: </label>
-                                <select>
-                                    <option class="selected" value="" selected> Bộ môn</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                    <option value="CNTT">Công nghệ thông tin</option>
-                                </select>
-                            </div>
-                            <div class="email input--form">
-                                <label> Email: </label>
-                                <input type="text" placeholder="Nhập email">
-                            </div>
+                            <div class=" sv-form">
+                                    <div class=" ten input--form">
+                                        <label> Tên : </label>
+                                        <input name="Name" type="text" placeholder="Nhập Tên">
+                                    </div>
+                                    <div class="ma input--form">
+                                        <label> Mã: </label>
+                                        <input name="Class" type="text" placeholder="Nhập ID">
+                                    </div>
+                                    <div class="diem-tb input--form">
+                                        <label> Điểm trung bình: </label>
+                                        <input name="poin"" type=" text" placeholder="Nhập điểm ">
+                                    </div>
+                                    <div class="khoa input--form">
+                                        <label> Khoa: </label>
+                                        <select>
+                                            <option class="selected" value="" selected> Chọn khoa</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                        </select>
+                                    </div>
+                                    <div class="bomon-lop input--form">
+                                        <label> Lớp: </label>
+                                        <select>
+                                            <option class="selected" value="" selected> Lớp</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                            <option value="CNTT">Công nghệ thông tin</option>
+                                        </select>
+                                    </div>
+                                    <div class="email input--form">
+                                        <label> Email: </label>
+                                        <input type="text" placeholder="Nhập email">
+                                    </div>
+                                    <div class="image input--form">
+                                        <label> Ảnh: </label>
+                                        <input type="file"" placeholder=" Thêm ảnh ">
+                                    </div>
 
-                            <div class="form__btn">
-                                <button class="form__btn--submi primary-btn">Tạo</button>
-                                <button class="primary-btn"> Hủy</button>
-                                <!-- <button class="primary-btn cancel-btn"> Quay lại</button> -->
                             </div>
-                        </div>
-                        <div class="multiple--user hidden">
-                            <p class="huong-dan">Hướng dẫn : Nhập tài khoản bằn file excel gồm các cột: <br> Mã sinh
-                                vên/ Mã giảng viên; Khoa; Lớp/Bộ môn; Ngày tháng năm sinh; Email </p>
+                       
 
-                            <input type="file">
+                            <div class=" form__btn">
+                                        <button class="form__btn--submi primary-btn">Tạo</button>
+                                        <button class="primary-btn"> Hủy</button>
+                                        <!-- <button class="primary-btn cancel-btn"> Quay lại</button> -->
+                                    </div>
+                                </div>
+                                <div class="multiple--user hidden">
+                                    <p class="huong-dan">Hướng dẫn : Nhập tài khoản bằn file excel gồm các cột: <br> Mã
+                                        sinh
+                                        vên/ Mã giảng viên; Khoa; Lớp/Bộ môn; Ngày tháng năm sinh; Email </p>
 
-                            <div class="form__btn">
-                                <button class="form__btn--submi primary-btn">Tạo</button>
-                                <button class="primary-btn"> Hủy</button>
-                                <!-- <button class="primary-btn cancel-btn"> Quay lại</button> -->
+                                    <input type="file">
+
+                                    <div class="form__btn">
+                                        <button class="form__btn--submi primary-btn">Tạo</button>
+                                        <button class="primary-btn"> Hủy</button>
+                                        <!-- <button class="primary-btn cancel-btn"> Quay lại</button> -->
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
-
-                    </div>
                 </form>
             </div>
         </div>

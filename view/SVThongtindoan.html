@@ -62,11 +62,25 @@
                         <i class="fas fa-cog"></i>
                     </div>
                     <span class="link-text">Quản lý tài khoản</span>
-                    <ul>
-                        <li><button>Log out</button></li>
-                        <li><a href="#">Thay đổi mật khẩu</a></li>
-                    </ul>
                 </a>
+                <ul>
+                    <li class="nav-item">
+                        <button class="nav-link">
+                            <div class="icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <span class="link-text">Log out</span>
+                        </button>
+
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link change-pass">
+                            <div class="icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <span class="link-text">Thay đổi mật khẩu</span>
+                        </button></li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -114,7 +128,6 @@
                         <i class="fas fa-receipt"></i>
                     </div>
                     <span class="link-text">Thông tin đồ án</span>
-
                 </a>
             </li>
 
@@ -124,11 +137,25 @@
                         <i class="fas fa-cog"></i>
                     </div>
                     <span class="link-text">Quản lý tài khoản</span>
-                    <ul>
-                        <li><button>Log out</button></li>
-                        <li><a href="#">Thay đổi mật khẩu</a></li>
-                    </ul>
                 </a>
+                <ul>
+                    <li class="nav-item">
+                        <button class="nav-link">
+                            <div class="icon">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </div>
+                            <span class="link-text">Log out</span>
+                        </button>
+
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link change-pass">
+                            <div class="icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <span class="link-text">Thay đổi mật khẩu</span>
+                        </button></li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -206,6 +233,28 @@
         </div>
 
     </main>
+    <div class="change-pass__form">
+        <h2 class="title mt-1">Thay đổi password</h2>
+        <button class="change-pass__form--exit">
+            <i class="far fa-times-circle"></i>
+        </button>
+        <form action="" name="change-password">
+            <div class="change-pass__form--input">
+                <input type="password" name="now-password" placeholder="Mật khâur hiện tại">
+                <!-- <label for="user-name">User Name</label> -->
+            </div>
+            <div class="change-pass__form--input">
+                <input type="password" name="new-password" placeholder="Mật khẩu mới">
+                <!-- <label for="password">Password</label> -->
+            </div>
+            <div class="change-pass__form--input">
+                <input type="password" name="new-password-2" placeholder="Nhập lại mật khẩu">
+                <!-- <label for="password">Password</label> -->
+            </div>
+
+            <button class="primary-btn">Thay đổi</button>
+        </form>
+    </div>
 
     <!-- footer -->
 

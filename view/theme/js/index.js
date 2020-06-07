@@ -11,10 +11,11 @@ const menuItem = document.querySelectorAll(".nav-menu .navbar-nav .nav-item")
 const addUserType = document.querySelectorAll(".management__addUser .type-addbox__btn-group");
 const userInsertForm = document.querySelector(".management__addUser .type-addbox");
 const objectDetail = document.querySelector(".object-details");
-const changePassBtn = document.querySelector(".change-pass");
-const changeBtn = document.querySelector(".change-btn");
 const loginBtn = document.querySelector(".login--btn");
-const changePassInput = document.querySelectorAll(".change-pass__input")
+const changePass = document.querySelectorAll(".change-pass")
+const formChangePass = document.querySelector(".change-pass__form")
+const exitFormChangePass = document.querySelector(".change-pass__form .change-pass__form--exit")
+const checkBox = document.getElementsByName("user-type");
 
 
 let teacherArray;
@@ -186,14 +187,33 @@ const BtnClink = () => {
 
         })
     }
-    if (changePassBtn) {
-        changePassBtn.addEventListener("click", e => {
-            e.preventDefault()
-            changePassInput.forEach(input => {
-                input.classList.toggle("hidden")
+    if (changePass) {
+        changePass.forEach(btn => {
+            btn.addEventListener("click", e => {
+                e.preventDefault();
+                formChangePass.classList.add("show")
+
             })
-            changeBtn.classList.toggle("hidden")
-            loginBtn.classList.toggle("hidden")
+        })
+
+        exitFormChangePass.addEventListener("click", e => {
+            e.preventDefault();
+            formChangePass.classList.remove('show')
+        })
+    }
+    if (checkBox) {
+        let gvForm = document.querySelector(".gv-form")
+        let svForm = document.querySelector(".sv-form")
+
+        checkBox.forEach(c => {
+            c.addEventListener("click", e => {
+                if (c.value == "sv") {
+                    gvForm.classList.add("hidden")
+                    svForm.classList.remove("hidden")
+                }
+                svForm.classList.add("hidden")
+                gvForm.classList.remove("hidden")
+            })
         })
     }
 
