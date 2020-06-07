@@ -38,7 +38,7 @@
                 </a>
             </li>
 
-
+            <!-- 
             <li class="nav-item" index="4">
                 <a href="#" class="nav-link">
                     <div class="icon">
@@ -46,7 +46,7 @@
                     </div>
                     <span class="link-text">Quản lý tài khoản</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </nav>
     <nav class="nav-menu nav-menu--mobile d-block d-md-none">
@@ -96,7 +96,41 @@
                 Danh sach sinh viên đăng ký làm đồ án
             </h2>
             <div class="container-fluid">
-                <div class="list-student__table">
+                <div class="select-option">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <div class="select-group">
+                                    <select class="selectpicker">
+                                        <option value="" selected>Chọn khoa</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CT">Công trình</option>
+                                        <option value="ND">Nào đó</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="select-group">
+                                    <select class="selectpicker">
+                                        <option value="" selected>Chọn Lớp</option>
+                                        <option value="CNTT">Công nghệ thông tin</option>
+                                        <option value="CT">Công trình</option>
+                                        <option value="ND">Nào đó</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Tên sinh viên" id="tkInput">
+                                    <button class="primary-btn">Tìm</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="list-student__table ">
                     <table class="table table-hover table-sm table-dark">
                         <thead>
                             <tr>
@@ -104,6 +138,7 @@
                                 <th scope="col">Họ và tên</th>
                                 <th scope="col">Lớp</th>
                                 <th scope="col">Điểm TB</th>
+                                <th scope="col">Trạng thái</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,17 +147,21 @@
                                 <td>Nguyễn Thị A</td>
                                 <td>57Th1</td>
                                 <td>2.5</td>
+                                <td>Đợi chấp nhận</td>
                             </tr>
                             <tr>
                                 <th scope="row">5679</th>
                                 <td>Trần Văn T</td>
                                 <td>56CT</td>
                                 <td>2.3</td>
+                                <td>Đang làm </td>
                             </tr>
                             <tr>
-                                <th scope="row">12344</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
+                                <th scope="row">5679</th>
+                                <td>Trần Văn T</td>
+                                <td>56CT</td>
+                                <td>2.3</td>
+                                <td>Đã hoàn thành </td>
                             </tr>
                         </tbody>
                     </table>

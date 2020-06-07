@@ -209,6 +209,8 @@ $desktop-width: 1024px;
                 padding: 1rem 0;
                 transition: background 0.2s;
 
+                position: relative;
+
                 &:hover {
                     background-color: $primary-menu-bg !important;
                 }
@@ -245,6 +247,8 @@ $desktop-width: 1024px;
                     display: flex;
                     align-items: center;
                     padding: 0;
+
+                    position: relative;
 
                     .icon {
                         width: 5rem;
@@ -333,6 +337,14 @@ $desktop-width: 1024px;
                     top: 50%;
                     transform: translateY(-50%);
                 }
+            }
+            ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+
+                overflow-x: hidden;
+                
             }
 
             &:nth-child(odd) {
@@ -578,6 +590,8 @@ $desktop-width: 1024px;
             &--col {
                 flex: 1;
                 flex-basis: 200px;
+                display: flex;
+                flex-direction: column;
 
                 &:last-child {
                     .col--content {
@@ -600,6 +614,7 @@ $desktop-width: 1024px;
                     font-size: 2rem;
                     padding: 2rem;
                     border-bottom: 1px solid #ffffff;
+                    flex: 1;
                 }
 
                 .col--content {
@@ -630,7 +645,8 @@ $desktop-width: 1024px;
         }
     }
 
-    .management {
+    .management,
+    .list-student {
         .table {
             font-size: 1.6rem;
             th,

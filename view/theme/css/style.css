@@ -433,6 +433,7 @@ ol {
   padding: 1rem 0;
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
+  position: relative;
 }
 
 .nav-menu.nav-menu--mobile .navbar-nav .nav-item:hover {
@@ -479,6 +480,7 @@ ol {
       -ms-flex-align: center;
           align-items: center;
   padding: 0;
+  position: relative;
 }
 
 .nav-menu.nav-menu--mobile .navbar-nav .nav-item .nav-link .icon {
@@ -579,6 +581,13 @@ ol {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.nav-menu .navbar-nav .nav-item ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  overflow-x: hidden;
 }
 
 .nav-menu .navbar-nav .nav-item:nth-child(odd) {
@@ -895,6 +904,13 @@ ol {
           flex: 1;
   -ms-flex-preferred-size: 200px;
       flex-basis: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main .internship-information__table--col:last-child .col--content,
@@ -926,6 +942,9 @@ ol {
   font-size: 2rem;
   padding: 2rem;
   border-bottom: 1px solid #ffffff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .main .internship-information__table--col .col--content,
@@ -959,25 +978,31 @@ ol {
   cursor: pointer;
 }
 
-.main .management .table {
+.main .management .table,
+.main .list-student .table {
   font-size: 1.6rem;
 }
 
 .main .management .table th,
-.main .management .table td {
+.main .management .table td,
+.main .list-student .table th,
+.main .list-student .table td {
   height: 5rem;
   padding: 1rem 0.5rem;
 }
 
-.main .management .table tbody tr {
+.main .management .table tbody tr,
+.main .list-student .table tbody tr {
   cursor: pointer;
 }
 
-.main .management .select-option {
+.main .management .select-option,
+.main .list-student .select-option {
   font-size: 1.6rem;
 }
 
-.main .management .select-option .input-group {
+.main .management .select-option .input-group,
+.main .list-student .select-option .input-group {
   margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -987,15 +1012,18 @@ ol {
           justify-content: center;
 }
 
-.main .management .select-option .input-group input {
+.main .management .select-option .input-group input,
+.main .list-student .select-option .input-group input {
   margin-right: 1rem;
 }
 
-.main .management .select-option .input-group .primary-btn {
+.main .management .select-option .input-group .primary-btn,
+.main .list-student .select-option .input-group .primary-btn {
   padding: 1rem 2rem;
 }
 
-.main .management .select-option .select-group {
+.main .management .select-option .select-group,
+.main .list-student .select-option .select-group {
   margin-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1005,25 +1033,30 @@ ol {
           justify-content: center;
 }
 
-.main .management .select-option .select-group .dropdown .filter-option-inner {
+.main .management .select-option .select-group .dropdown .filter-option-inner,
+.main .list-student .select-option .select-group .dropdown .filter-option-inner {
   font-size: 1.6rem;
 }
 
-.main .management .select-option .select-group .dropdown-menu {
+.main .management .select-option .select-group .dropdown-menu,
+.main .list-student .select-option .select-group .dropdown-menu {
   font-size: 1.6rem;
 }
 
-.main .management__addUser {
+.main .management__addUser,
+.main .list-student__addUser {
   font-size: 1.6rem;
 }
 
-.main .management__addUser .radio-button {
+.main .management__addUser .radio-button,
+.main .list-student__addUser .radio-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.main .management__addUser .type-addbox__btn-group {
+.main .management__addUser .type-addbox__btn-group,
+.main .list-student__addUser .type-addbox__btn-group {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1033,11 +1066,13 @@ ol {
           justify-content: center;
 }
 
-.main .management__addUser .type-addbox__btn-group .primary-btn {
+.main .management__addUser .type-addbox__btn-group .primary-btn,
+.main .list-student__addUser .type-addbox__btn-group .primary-btn {
   margin: 0 1rem;
 }
 
-.main .management__addUser .type-addbox {
+.main .management__addUser .type-addbox,
+.main .list-student__addUser .type-addbox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1056,7 +1091,9 @@ ol {
 }
 
 .main .management__addUser .type-addbox .radio-button,
-.main .management__addUser .type-addbox .form__btn {
+.main .management__addUser .type-addbox .form__btn,
+.main .list-student__addUser .type-addbox .radio-button,
+.main .list-student__addUser .type-addbox .form__btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1068,7 +1105,9 @@ ol {
 }
 
 .main .management__addUser .type-addbox .user--one,
-.main .management__addUser .type-addbox .multiple--user {
+.main .management__addUser .type-addbox .multiple--user,
+.main .list-student__addUser .type-addbox .user--one,
+.main .list-student__addUser .type-addbox .multiple--user {
   width: 100%;
   max-width: 40rem;
   display: -webkit-box;
@@ -1081,7 +1120,9 @@ ol {
 }
 
 .main .management__addUser .type-addbox .user--one .input--form,
-.main .management__addUser .type-addbox .multiple--user .input--form {
+.main .management__addUser .type-addbox .multiple--user .input--form,
+.main .list-student__addUser .type-addbox .user--one .input--form,
+.main .list-student__addUser .type-addbox .multiple--user .input--form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1094,7 +1135,11 @@ ol {
 .main .management__addUser .type-addbox .user--one .input--form select,
 .main .management__addUser .type-addbox .user--one .input--form input,
 .main .management__addUser .type-addbox .multiple--user .input--form select,
-.main .management__addUser .type-addbox .multiple--user .input--form input {
+.main .management__addUser .type-addbox .multiple--user .input--form input,
+.main .list-student__addUser .type-addbox .user--one .input--form select,
+.main .list-student__addUser .type-addbox .user--one .input--form input,
+.main .list-student__addUser .type-addbox .multiple--user .input--form select,
+.main .list-student__addUser .type-addbox .multiple--user .input--form input {
   width: 100%;
   max-width: 18rem;
 }
@@ -1103,7 +1148,11 @@ ol {
   .main .management__addUser .type-addbox .user--one .input--form select,
   .main .management__addUser .type-addbox .user--one .input--form input,
   .main .management__addUser .type-addbox .multiple--user .input--form select,
-  .main .management__addUser .type-addbox .multiple--user .input--form input {
+  .main .management__addUser .type-addbox .multiple--user .input--form input,
+  .main .list-student__addUser .type-addbox .user--one .input--form select,
+  .main .list-student__addUser .type-addbox .user--one .input--form input,
+  .main .list-student__addUser .type-addbox .multiple--user .input--form select,
+  .main .list-student__addUser .type-addbox .multiple--user .input--form input {
     min-width: 25rem;
   }
 }
@@ -1111,7 +1160,11 @@ ol {
 .main .management__addUser .type-addbox .user--one .input--form select .selected,
 .main .management__addUser .type-addbox .user--one .input--form input .selected,
 .main .management__addUser .type-addbox .multiple--user .input--form select .selected,
-.main .management__addUser .type-addbox .multiple--user .input--form input .selected {
+.main .management__addUser .type-addbox .multiple--user .input--form input .selected,
+.main .list-student__addUser .type-addbox .user--one .input--form select .selected,
+.main .list-student__addUser .type-addbox .user--one .input--form input .selected,
+.main .list-student__addUser .type-addbox .multiple--user .input--form select .selected,
+.main .list-student__addUser .type-addbox .multiple--user .input--form input .selected {
   color: #4e4e4e;
 }
 /*# sourceMappingURL=style.css.map */
