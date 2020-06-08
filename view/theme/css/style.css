@@ -234,6 +234,10 @@ ol {
 
 /* Mixin */
 /* Set các giá trị với màn hình tương ứng */
+label {
+  font-weight: bold;
+}
+
 .secondary-btn {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
@@ -383,6 +387,81 @@ ol {
 /*----------------------------------------*/
 /* main page
 /*----------------------------------------*/
+/* --------header--footer-------------------------*/
+.header,
+.footer {
+  height: 7rem;
+  font-size: 1rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #2c2d3a;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .header,
+  .footer {
+    margin-left: 10rem;
+  }
+}
+
+.header--left,
+.footer--left {
+  font-size: 1.8rem;
+}
+
+.header--left img,
+.footer--left img {
+  width: 10rem;
+}
+
+.header--left span,
+.footer--left span {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header--right,
+.footer--right {
+  background-color: #ffffff;
+  position: absolute;
+  width: 20%;
+  min-width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 1rem 1rem;
+  top: 0;
+  right: 0;
+  color: #3867ff;
+  border-bottom-left-radius: 7.5rem;
+}
+
+.header--right a:hover,
+.footer--right a:hover {
+  color: #333333;
+}
+
+.header--right .user-type span,
+.footer--right .user-type span {
+  font-weight: bold;
+}
+
+@media (max-width: 479px) {
+  .header {
+    display: none;
+  }
+}
+
+footer.footer {
+  height: auto;
+}
+
 /* --------navbar-------------------------*/
 .nav-menu {
   position: fixed;
@@ -684,11 +763,12 @@ ol {
   -webkit-transition-delay: 2s;
           transition-delay: 2s;
   color: white;
+  text-align: start;
 }
 
 /*-------------------- main----------------*/
 .main {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 10rem;
   margin-left: 0;
   padding: 0;
