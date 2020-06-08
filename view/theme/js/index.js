@@ -195,11 +195,14 @@ const BtnClink = () => {
 
             })
         })
+        if (exitFormChangePass) {
+            exitFormChangePass.addEventListener("click", e => {
+                e.preventDefault();
+                formChangePass.classList.remove('show')
+            })
+        }
 
-        exitFormChangePass.addEventListener("click", e => {
-            e.preventDefault();
-            formChangePass.classList.remove('show')
-        })
+
     }
     if (checkBox) {
         let gvForm = document.querySelector(".gv-form")
@@ -210,9 +213,10 @@ const BtnClink = () => {
                 if (c.value == "sv") {
                     gvForm.classList.add("hidden")
                     svForm.classList.remove("hidden")
+                } else {
+                    svForm.classList.add("hidden")
+                    gvForm.classList.remove("hidden")
                 }
-                svForm.classList.add("hidden")
-                gvForm.classList.remove("hidden")
             })
         })
     }

@@ -724,6 +724,46 @@ ol {
   margin: 0 auto;
 }
 
+.main .select-option {
+  font-size: 1.6rem;
+}
+
+.main .select-option .input-group {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .select-option .input-group input {
+  margin-right: 1rem;
+}
+
+.main .select-option .input-group .primary-btn {
+  padding: 1rem 2rem;
+}
+
+.main .select-option .select-group {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .select-option .select-group .dropdown .filter-option-inner {
+  font-size: 1.6rem;
+}
+
+.main .select-option .select-group .dropdown-menu {
+  font-size: 1.6rem;
+}
+
 .main .select-teacher .select-option .select-group {
   margin-bottom: 2rem;
   display: -webkit-box;
@@ -789,6 +829,8 @@ ol {
   -ms-flex-preferred-size: 500px;
       flex-basis: 500px;
   margin: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border: 1px solid #000000;
   border-radius: 1rem;
 }
@@ -797,7 +839,16 @@ ol {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  -ms-flex-preferred-size: 10rem;
+      flex-basis: 10rem;
   padding: 2rem;
+}
+
+@media (max-width: 479px) {
+  .main .list-teacher__list .item__img {
+    -ms-flex-preferred-size: 15rem;
+        flex-basis: 15rem;
+  }
 }
 
 .main .list-teacher__list .item__content {
@@ -813,6 +864,8 @@ ol {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
+  -ms-flex-preferred-size: 20rem;
+      flex-basis: 20rem;
   padding: 2rem;
 }
 
@@ -1039,53 +1092,6 @@ ol {
 .main .management .table tbody tr,
 .main .list-student .table tbody tr {
   cursor: pointer;
-}
-
-.main .management .select-option,
-.main .list-student .select-option {
-  font-size: 1.6rem;
-}
-
-.main .management .select-option .input-group,
-.main .list-student .select-option .input-group {
-  margin-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.main .management .select-option .input-group input,
-.main .list-student .select-option .input-group input {
-  margin-right: 1rem;
-}
-
-.main .management .select-option .input-group .primary-btn,
-.main .list-student .select-option .input-group .primary-btn {
-  padding: 1rem 2rem;
-}
-
-.main .management .select-option .select-group,
-.main .list-student .select-option .select-group {
-  margin-bottom: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.main .management .select-option .select-group .dropdown .filter-option-inner,
-.main .list-student .select-option .select-group .dropdown .filter-option-inner {
-  font-size: 1.6rem;
-}
-
-.main .management .select-option .select-group .dropdown-menu,
-.main .list-student .select-option .select-group .dropdown-menu {
-  font-size: 1.6rem;
 }
 
 .main .management__addUser,
