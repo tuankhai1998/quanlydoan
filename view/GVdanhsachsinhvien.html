@@ -229,6 +229,7 @@
                     <table class="table table-hover table-sm table-dark">
                         <thead>
                             <tr>
+                                <th scope="col">STT</th>
                                 <th scope="col">Mã sinh viên</th>
                                 <th scope="col">Họ và tên</th>
                                 <th scope="col">Lớp</th>
@@ -238,6 +239,7 @@
                         </thead>
                         <tbody>
                             <tr>
+                                <td>1</td>
                                 <th scope="row">1234</th>
                                 <td>Nguyễn Thị A</td>
                                 <td>57Th1</td>
@@ -245,6 +247,7 @@
                                 <td>Đợi chấp nhận</td>
                             </tr>
                             <tr>
+                                <td>2</td>
                                 <th scope="row">5679</th>
                                 <td>Trần Văn T</td>
                                 <td>56CT</td>
@@ -252,6 +255,7 @@
                                 <td>Đang làm </td>
                             </tr>
                             <tr>
+                                <td>3</td>
                                 <th scope="row">5679</th>
                                 <td>Trần Văn T</td>
                                 <td>56CT</td>
@@ -265,6 +269,9 @@
 
 
                 <div class="object-details hidden">
+                    <button class="cancel-btn">
+                        <i class="far fa-times-circle"></i>
+                    </button>
                     <div class=" container">
                         <h1 class="title">Thông tin đồ án</h1>
                         <div class="row">
@@ -303,8 +310,8 @@
                                     <div class="form__btn">
                                         <button class="form__btn--submi primary-btn"
                                             onclick="acceptStudent(12334)">Chọn</button>
-                                        <button class="primary-btn"> Hủy</button>
-                                        <button class="primary-btn cancel-btn"> Quay lại</button>
+                                        <button class="primary-btn huy-btn"> Hủy</button>
+                                        <!-- <button class="primary-btn cancel-btn"> Quay lại</button> -->
                                     </div>
                                 </form>
                             </div>

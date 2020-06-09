@@ -952,20 +952,52 @@ footer.footer {
 .main .form,
 .main .object-details {
   position: fixed;
-  width: 100%;
-  height: 100vmax;
-  top: 0;
-  left: 0;
-  background: #ffffff;
+  width: 50%;
+  max-height: 100vmax;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
   z-index: 1000;
+  -webkit-transition: all 2s ease-in-out 0.2s;
+  transition: all 2s ease-in-out 0.2s;
+  border-radius: 2rem;
+  background: #ffffff;
   padding: 5rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
 
+.main .form .cancel-btn,
+.main .object-details .cancel-btn {
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  border: none;
+  background: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .main .form.hidden,
 .main .object-details.hidden {
+  -webkit-transform: translate(-50%, -50%) scale(0.2);
+          transform: translate(-50%, -50%) scale(0.2);
   opacity: 0;
   z-index: -1;
 }
@@ -973,8 +1005,10 @@ footer.footer {
 @media (max-width: 479px) {
   .main .form,
   .main .object-details {
+    width: 100%;
+    height: 100%;
     padding: 2rem 0;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 

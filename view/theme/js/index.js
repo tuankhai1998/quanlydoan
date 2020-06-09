@@ -1,8 +1,8 @@
 const itemSelectTeacher = document.querySelectorAll(".list-teacher__list div.item");
 const btnItemSelectTeacher = document.querySelectorAll(".list-teacher__list div.item div.item__content button");
 const formDoAn = document.getElementById("Form-do-an");
-const cancelBtn = document.querySelector(".cancel-btn");
 const menuForMobile = document.querySelector(".nav-menu--mobile .navbar-nav")
+const cancelBtn = document.querySelector(".cancel-btn");
 const repairBtn = document.getElementById("repairBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const inputForm = document.querySelectorAll(".form__content .input--form input")
@@ -16,7 +16,8 @@ const changePass = document.querySelectorAll(".change-pass")
 const formChangePass = document.querySelector(".change-pass__form")
 const exitFormChangePass = document.querySelector(".change-pass__form .change-pass__form--exit")
 const checkBox = document.getElementsByName("user-type");
-
+const huyBtn = document.querySelector(".huy-btn")
+const finistFormBtn = document.querySelector(".finistform-btn")
 
 let teacherArray;
 let student = [
@@ -36,6 +37,8 @@ let student = [
 localStorage.setItem('teacher', teacherArray);
 localStorage.setItem('student', JSON.stringify(student))
 let index = localStorage.getItem('index') || "1";
+
+
 
 const menuItemClick = () => {
     menuItem.forEach(item => {
@@ -125,12 +128,14 @@ const acceptStudent = (idStudent) => {
     console.log(idStudent)
 }
 
+
+// lấy id của từng row khi click
 const tableRowClick = () => {
     tableRow.forEach(row => {
         row.addEventListener("click", (e) => {
             let id = row.querySelector("th").innerHTML;
             objectDetail.classList.remove("hidden")
-            // console.log(id)
+
         })
     })
 }
@@ -166,9 +171,23 @@ const BtnClink = () => {
                 formDoAn.classList.add('hidden');
             } else if (objectDetail) {
                 objectDetail.classList.add("hidden")
+                inputForm.forEach(input => {
+                    input.setAttribute("readonly", "true")
+                    input.classList.remove("border")
+                })
+                if (finistFormBtn) {
+                    finistFormBtn.classList.add("hidden")
+                }
             }
             localStorage.setItem('teacher', [])
         })
+        if (deleteBtn) {
+            deleteBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                confirm("Bạn có chấp nhận xóa?")
+            })
+
+        }
     }
     if (repairBtn) {
         repairBtn.addEventListener("click", (e) => {
@@ -176,15 +195,24 @@ const BtnClink = () => {
             inputForm.forEach(input => {
                 input.removeAttribute("readonly")
                 input.classList.add("border")
+                finistFormBtn.classList.remove("hidden")
             })
 
         })
-    }
-    if (deleteBtn) {
-        deleteBtn.addEventListener("click", (e) => {
-            e.preventDefault()
-            console.log("delete")
 
+        if (finistFormBtn) {
+            finistFormBtn.addEventListener("click", (e) => {
+                e.preventDefault()
+                confirm("Bạn có muốn cập nhật lại ?")
+            })
+        }
+    }
+
+    if (huyBtn) {
+        huyBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            console.log("hahah")
+            confirm("Bạn có muốn hủy?")
         })
     }
     if (changePass) {
@@ -220,9 +248,6 @@ const BtnClink = () => {
             })
         })
     }
-
-
-
 
 }
 BtnClink()
