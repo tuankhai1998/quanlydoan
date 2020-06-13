@@ -1010,6 +1010,18 @@ footer.footer {
     padding: 2rem 0;
     overflow-y: scroll;
   }
+  .main .form h2.title,
+  .main .object-details h2.title {
+    padding-top: 2rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main .form,
+  .main .object-details {
+    width: 80%;
+    overflow-y: scroll;
+  }
 }
 
 .main .form__content,

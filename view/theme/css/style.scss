@@ -671,19 +671,6 @@ footer.footer {
             align-items: center;
         }
 
-        // &::before {
-        //     content: "\f057";
-        //     font-family: "Font Awesome 5 Free";
-        //     width: 3rem;
-        //     height: 3rem;
-        //     font-size: 3rem;
-        //     position: absolute;
-        //     top: 2rem;
-        //     right: 2rem;
-
-        //     cursor: pointer;
-        // }
-
         &.hidden {
             transform: translate(-50%, -50%) scale(0.2);
             opacity: 0;
@@ -694,6 +681,15 @@ footer.footer {
             width: 100%;
             height: 100%;
             padding: 2rem 0;
+            overflow-y: scroll;
+
+            h2.title {
+                padding-top: 2rem !important;
+            }
+        }
+
+        @include tablet() {
+            width: 80%;
             overflow-y: scroll;
         }
 

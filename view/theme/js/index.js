@@ -7,6 +7,7 @@ const repairBtn = document.getElementById("repairBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const inputForm = document.querySelectorAll(".form__content .input--form input")
 const tableRow = document.querySelectorAll(".table tbody tr");
+const tableHeader = document.querySelector(".table thead tr");
 const menuItem = document.querySelectorAll(".nav-menu .navbar-nav .nav-item")
 const addUserType = document.querySelectorAll(".management__addUser .type-addbox__btn-group");
 const userInsertForm = document.querySelector(".management__addUser .type-addbox");
@@ -18,6 +19,10 @@ const exitFormChangePass = document.querySelector(".change-pass__form .change-pa
 const checkBox = document.getElementsByName("user-type");
 const huyBtn = document.querySelector(".huy-btn")
 const finistFormBtn = document.querySelector(".finistform-btn")
+
+
+
+
 
 let teacherArray;
 let student = [
@@ -127,18 +132,58 @@ const toggleMenuForMobile = () => {
 const acceptStudent = (idStudent) => {
     console.log(idStudent)
 }
+const returnForm = (header, detail) => {
+    let form = ''
 
+    for (let i = 0; i < header.length; i++) {
+        form += `   <div class="name input--form">
+        <label> ${header[i]}: </label>
+        <input name="Name" type="text" value="${detail[i]}" readonly>
+        </div>`
+    }
+
+    return form;
+}
 
 // lấy id của từng row khi click
 const tableRowClick = () => {
     tableRow.forEach(row => {
         row.addEventListener("click", (e) => {
-            let id = row.querySelector("th").innerHTML;
+            let headerCol = [];
+            let detailObject = {}
+            let deatilArray = []
+            let id = row.querySelector('th').innerHTML
+            let rowDetail = row.querySelectorAll("td");
+            tableHeader.querySelectorAll("th").forEach(th => {
+                headerCol = [...headerCol, th.innerHTML]
+            })
+            rowDetail.forEach(td => {
+                deatilArray = [...deatilArray, td.innerHTML]
+            })
+            // headerCol.length
+            console.log(headerCol)
+
+            detailObject.id = id;
+            detailObject.data = deatilArray;
+            if (objectDetail.querySelector(".container .row div.col-md-4 .user-profile__image")) {
+
+                objectDetail.querySelector(".container .row div.col-md-4 .user-profile__image").innerHTML = `
+                <img src="./theme/images/4035_screen-shot-20190625-at-230551-1561479584581.jpg" alt="">
+            `
+            }
+            objectDetail.querySelector(".container .row div .form__content .from__content--input").innerHTML = `
+            ${returnForm(headerCol, detailObject.data)}
+            `
             objectDetail.classList.remove("hidden")
+            console.log(detailObject)
+
 
         })
     })
 }
+
+
+
 
 
 const selectTypeInsert = () => {
