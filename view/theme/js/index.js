@@ -19,8 +19,7 @@ const exitFormChangePass = document.querySelector(".change-pass__form .change-pa
 const checkBox = document.getElementsByName("user-type");
 const huyBtn = document.querySelector(".huy-btn")
 const finistFormBtn = document.querySelector(".finistform-btn")
-
-
+const layer = document.querySelector(".layer")
 
 
 
@@ -42,6 +41,9 @@ let student = [
 localStorage.setItem('teacher', teacherArray);
 localStorage.setItem('student', JSON.stringify(student))
 let index = localStorage.getItem('index') || "1";
+
+
+
 
 
 
@@ -73,6 +75,7 @@ renderActiveItemMenu()
 const selectTeacherBtnClick = () => {
     btnItemSelectTeacher.forEach((btn) => {
         btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             teacherArray = [];
             const teacherInfo = e.path[2].querySelectorAll(".item__content .item__content--profile p span");
             teacherInfo.forEach(teacher => {
@@ -110,8 +113,18 @@ const selectTeacherBtnClick = () => {
                     <input type="text" placeholder="Nhập tên đò án">
                 </div>
             `
-            formDoAn.classList.remove('hidden')
 
+            if (window.getComputedStyle(formDoAn).display === "none") {
+                formDoAn.classList.remove('hidden');
+                layer.style.display = "block";
+                if (formChangePass) {
+                    formChangePass.classList.add('hidden')
+                }
+            }
+            else {
+                formDoAn.classList.add('hidden');
+                layer.style.display = "none";
+            }
         })
     }
 
@@ -149,6 +162,7 @@ const returnForm = (header, detail) => {
 const tableRowClick = () => {
     tableRow.forEach(row => {
         row.addEventListener("click", (e) => {
+            e.stopPropagation();
             let headerCol = [];
             let detailObject = {}
             let deatilArray = []
@@ -160,9 +174,6 @@ const tableRowClick = () => {
             rowDetail.forEach(td => {
                 deatilArray = [...deatilArray, td.innerHTML]
             })
-            // headerCol.length
-            console.log(headerCol)
-
             detailObject.id = id;
             detailObject.data = deatilArray;
             if (objectDetail.querySelector(".container .row div.col-md-4 .user-profile__image")) {
@@ -172,19 +183,26 @@ const tableRowClick = () => {
             `
             }
             objectDetail.querySelector(".container .row div .form__content .from__content--input").innerHTML = `
-            ${returnForm(headerCol, detailObject.data)}
+            <div class="name input--form hidden ">
+            <label> id: </label>
+            <input name="Name" type="text" value="${id}" readonly>
+            </div>
+            ${ returnForm(headerCol, detailObject.data)}
             `
-            objectDetail.classList.remove("hidden")
-            console.log(detailObject)
-
+            if (window.getComputedStyle(objectDetail).display === "none") {
+                objectDetail.classList.remove("hidden");
+                layer.style.display = "block";
+                if (formChangePass) {
+                    formChangePass.classList.add('hidden')
+                }
+            }
+            else {
+                objectDetail.classList.add("hidden");
+            }
 
         })
     })
 }
-
-
-
-
 
 const selectTypeInsert = () => {
     addUserType.forEach(btn => {
@@ -214,14 +232,18 @@ const BtnClink = () => {
         cancelBtn.addEventListener('click', (e) => {
             if (formDoAn) {
                 formDoAn.classList.add('hidden');
+                layer.style.display = "none";
             } else if (objectDetail) {
                 objectDetail.classList.add("hidden")
+                layer.style.display = "none";
+
                 inputForm.forEach(input => {
                     input.setAttribute("readonly", "true")
                     input.classList.remove("border")
                 })
                 if (finistFormBtn) {
                     finistFormBtn.classList.add("hidden")
+                    layer.style.display = "none";
                 }
             }
             localStorage.setItem('teacher', [])
@@ -230,6 +252,7 @@ const BtnClink = () => {
             deleteBtn.addEventListener("click", (e) => {
                 e.preventDefault()
                 confirm("Bạn có chấp nhận xóa?")
+                layer.style.display = "none";
             })
 
         }
@@ -249,6 +272,7 @@ const BtnClink = () => {
             finistFormBtn.addEventListener("click", (e) => {
                 e.preventDefault()
                 confirm("Bạn có muốn cập nhật lại ?")
+                layer.style.display = "none";
             })
         }
     }
@@ -263,15 +287,28 @@ const BtnClink = () => {
     if (changePass) {
         changePass.forEach(btn => {
             btn.addEventListener("click", e => {
-                e.preventDefault();
-                formChangePass.classList.add("show")
-
+                e.stopPropagation();
+                if (window.getComputedStyle(formChangePass).display === "none") {
+                    formChangePass.classList.remove("hidden");
+                    layer.style.display = "block";
+                    if (objectDetail) {
+                        objectDetail.classList.add("hidden");
+                    }
+                    if (formDoAn) {
+                        formDoAn.classList.add('hidden');
+                    }
+                }
+                else {
+                    console.log("remove show")
+                    formChangePass.classList.add('hidden')
+                }
             })
         })
         if (exitFormChangePass) {
             exitFormChangePass.addEventListener("click", e => {
                 e.preventDefault();
-                formChangePass.classList.remove('show')
+                formChangePass.classList.add('hidden')
+                layer.style.display = "none";
             })
         }
 
@@ -296,5 +333,21 @@ const BtnClink = () => {
 
 }
 BtnClink()
+
+// win.addEventListener('click', e => {
+//     if (formChangePass && objectDetail) {
+//         if (window.getComputedStyle(objectDetail).display === "none") {
+//             formChangePass.classList.add('hidden')
+//         } else {
+//             objectDetail.classList.add("hidden");
+//         }
+//     }
+//     if (objectDetail) {
+//         objectDetail.classList.add("hidden");
+//     } else if (formChangePass && formDoAn) {
+//         formChangePass.classList.add('hidden')
+//         formDoAn.classList.add('hidden');
+//     }
+// })
 
 
