@@ -614,6 +614,19 @@ footer.footer {
                 border: 1px solid #000000;
                 border-radius: 1rem;
 
+                .group-btn {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    padding: 1rem;
+
+                    .primary-btn {
+                        flex: 1;
+                        flex-basis: 10rem;
+                        margin: 0 1rem;
+                    }
+                }
+
                 &__img {
                     flex: 1;
                     flex-basis: 10rem;
@@ -631,6 +644,15 @@ footer.footer {
                     flex: 2;
                     flex-basis: 20rem;
                     padding: 2rem;
+
+                    &--teacher {
+                        p {
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            display: -webkit-box;
+                        }
+                    }
                 }
             }
         }
@@ -639,7 +661,7 @@ footer.footer {
     .form,
     .object-details {
         position: fixed;
-        max-height: 100vmax;
+        // max-height: 100vmin;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
@@ -695,7 +717,7 @@ footer.footer {
 
         @include desktop() {
             width: 50%;
-            height: 70vmax;
+            height: 70vmin;
             max-height: 70rem;
             overflow-y: scroll;
             padding: 5rem;

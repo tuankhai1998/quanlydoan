@@ -1,5 +1,7 @@
 const itemSelectTeacher = document.querySelectorAll(".list-teacher__list div.item");
-const btnItemSelectTeacher = document.querySelectorAll(".list-teacher__list div.item div.item__content button");
+const btnItemSelectTeacher = document.querySelectorAll(".list-teacher__list div.item .group-btn .item--btn");
+const btnShowTeacherDetail = document.querySelectorAll(".list-teacher__list div.item .group-btn .teach-detail--btn");
+
 const formDoAn = document.getElementById("Form-do-an");
 const menuForMobile = document.querySelector(".nav-menu--mobile .navbar-nav")
 const cancelBtn = document.querySelector(".cancel-btn");
@@ -22,30 +24,9 @@ const finistFormBtn = document.querySelector(".finistform-btn")
 const layer = document.querySelector(".layer")
 
 
-
-let teacherArray;
-let student = [
-    {
-        ten: "Nguyễn Thi M",
-        lop: "57TH1",
-        khoa: "Công nghệ Thông Tin",
-        anh: "/theme/images/4035_screen-shot-20190625-at-230551-1561479584581.jpg"
-    },
-    {
-        ten: "Nguyễn Thi M",
-        lop: "57TH1",
-        khoa: "Công nghệ Thông Tin",
-        anh: "/theme/images/4035_screen-shot-20190625-at-230551-1561479584581.jpg"
-    }
-]
-localStorage.setItem('teacher', teacherArray);
-localStorage.setItem('student', JSON.stringify(student))
 let index = localStorage.getItem('index') || "1";
 
-
-
-
-
+console.log(btnItemSelectTeacher)
 
 const menuItemClick = () => {
     menuItem.forEach(item => {
@@ -76,17 +57,24 @@ const selectTeacherBtnClick = () => {
     btnItemSelectTeacher.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            teacherArray = [];
-            const teacherInfo = e.path[2].querySelectorAll(".item__content .item__content--profile p span");
+            let teacherArray = [];
+            let studentArray = [];
+            const teacherInfo = e.path[2].querySelectorAll(".item__content .item__content--teacher p span");
+            const studenInfor = e.path[2].querySelectorAll(".item__content .item__content--student  p span");
+
             teacherInfo.forEach(teacher => {
                 let attr = teacher.getAttribute("title");
                 let content = teacher.innerHTML;
-
                 teacherArray = [...teacherArray, attr, content]
 
             })
+            studenInfor.forEach(student => {
+                let attr = student.getAttribute("title");
+                let content = student.innerHTML;
+                studentArray = [...studentArray, attr, content]
 
-            localStorage.setItem('teacher', JSON.stringify(teacherArray))
+            })
+
 
             formDoAn.querySelector(".container .row div.col-md-4 .user-profile__image").innerHTML = `
                 <img src="./theme/images/4035_screen-shot-20190625-at-230551-1561479584581.jpg" alt="">
@@ -94,15 +82,15 @@ const selectTeacherBtnClick = () => {
             formDoAn.querySelector(".container .row div.col-md-8 .form__content .from__content--input").innerHTML = `
                 <div class="name input--form">
                 <label> Tên sinh viên: </label>
-                <input name="Name" type="text" value="${student.ten}" readonly>
+                <input name="Name" type="text" value="${studentArray[1]}" readonly>
                 </div>
                 <div class="class input--form">
                     <label> Lớp: </label>
-                    <input name="Class" type="text" value="${student.lop}" readonly>
+                    <input name="Class" type="text" value="${studentArray[3]}}" readonly>
                 </div>
                 <div class="khoa input--form">
                     <label> Khoa: </label>
-                    <input name="Khoa" type="text" value="${student.khoa}" readonly>
+                    <input name="Khoa" type="text" value="${studentArray[3]}" readonly>
                 </div>
                 <div class="name input--form">
                     <label> Giản viên hướng dẫn: </label>
@@ -130,6 +118,70 @@ const selectTeacherBtnClick = () => {
 
     )
 }
+
+const showTeacherDetail = () => {
+
+    btnShowTeacherDetail.forEach(btn => {
+        btn.addEventListener('click', e => {
+            console.log("hahah")
+            e.stopPropagation();
+            let teacherArray = [];
+            // let student = [];
+            const teacherInfo = e.path[2].querySelectorAll(".item__content .item__content--teacher p span");
+
+            teacherInfo.forEach(teacher => {
+                let attr = teacher.getAttribute("title");
+                let content = teacher.innerHTML;
+                console.log(content)
+                teacherArray = [...teacherArray, attr, content]
+
+            })
+
+
+            formDoAn.querySelector(".container .row div.col-md-4 .user-profile__image").innerHTML = `
+                <img src="./theme/images/4035_screen-shot-20190625-at-230551-1561479584581.jpg" alt="">
+            `
+            formDoAn.querySelector(".container .row div.col-md-8 .form__content .from__content--input").innerHTML = `
+                <div class="name input--form">
+                <label> Tên Gv: </label>
+                <input name="Name" type="text" value="${teacherArray[1]}" readonly>
+                </div>
+                <div class="class input--form">
+                    <label> Lớp: </label>
+                    <input name="Class" type="text" value="${teacherArray[3]}" readonly>
+                </div>
+                <div class="khoa input--form">
+                    <label> Khoa: </label>
+                    <input name="Khoa" type="text" value="${teacherArray[5]}" readonly>
+                </div>
+                <div class="name input--form">
+                    <label> Giản viên hướng dẫn: </label>
+                    <textarea id="w3review" name="w3review" rows="4" cols="50" readonly>
+                    ${teacherArray[7]}
+                    </textarea>
+                    
+                </div>
+                
+            `
+
+            if (window.getComputedStyle(formDoAn).display === "none") {
+                formDoAn.classList.remove('hidden');
+                layer.style.display = "block";
+                if (formChangePass) {
+                    formChangePass.classList.add('hidden')
+                }
+            }
+            else {
+                formDoAn.classList.add('hidden');
+                layer.style.display = "none";
+            }
+        })
+    })
+
+}
+
+showTeacherDetail()
+
 
 const studentBtnClick = (idGV, idSV) => {
     console.log(idGV, idSV)
